@@ -1,5 +1,6 @@
 import StyledComponentsRegistry from "lib/StyleRegistry";
 import GlobalStyles from "styles/GlobalStyles";
+import {GridContainer, NavBar} from "components"
 
 export const metadata = {
     title: "Showgate | Stream Movies and TV Shows.",
@@ -13,7 +14,10 @@ export default function RootLayout({children}) {
             <body>
                 <StyledComponentsRegistry>
                     <GlobalStyles />
-                    {children}
+                    <GridContainer>
+                        <NavBar />
+                        {children}
+                    </GridContainer>
                 </StyledComponentsRegistry>
             </body>
         </html>
