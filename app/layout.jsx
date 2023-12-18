@@ -1,6 +1,7 @@
 import StyledComponentsRegistry from "lib/StyleRegistry";
-import GlobalStyles from "styles/GlobalStyles";
-import {GridContainer, NavBar} from "components"
+import GlobalStyles from "styles/globalstyles";
+import {GridContainer, NavBar} from "components";
+import { barlow, roboto } from "styles/fonts"; 
 
 export const metadata = {
     title: "Showgate | Stream Movies and TV Shows.",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function RootLayout({children}) {
 
     return(
-        <html lang="en">
+        <html lang="en" className={`${barlow.variable} ${roboto.variable}`}>
             <body>
                 <StyledComponentsRegistry>
                     <GlobalStyles />

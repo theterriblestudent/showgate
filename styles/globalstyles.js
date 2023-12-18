@@ -10,13 +10,9 @@ const GlobalStyles = createGlobalStyle`
        --light-foreground-color: #f4f4f4;
        --dark-foreground-color: #b8b8b8;
 
-       //Font Stack
-       --primary-font: " 'Roboto', sans-serif";
-       --secondary-font: " 'Barlow', sans-serif";
-
        //Breakpoints
-       --tablet-breakpoint: "968px";
-       --mobile-breakpoint: "480px";
+       --tablet-breakpoint: 968px;
+       --mobile-breakpoint: 480px;
     }
     * {
             //Resets
