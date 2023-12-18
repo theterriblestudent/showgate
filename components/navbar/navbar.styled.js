@@ -7,6 +7,11 @@ import {GridContainer, FlexContainer} from "components"
 
 const StyledNavbar = styled(GridContainer).attrs({className:"full-width nav-bar"})` 
     padding: 20px 0 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
 
     @media only screen and (max-width: 968px) {
         .nav-links {
@@ -30,7 +35,6 @@ const StyledLink = styled(Link)`
     @media only screen and (max-width: 968px) {
         text-transform: uppercase;
     }
-
 `;
 
 const StyledImage = styled(Image)`
