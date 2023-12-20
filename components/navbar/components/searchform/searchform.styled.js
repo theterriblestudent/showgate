@@ -11,12 +11,12 @@ export const StyledForm = styled(FlexContainer)`
     border: 2px solid var(--accent-color);
     border-radius: 50px;
     padding: 3px 3px 3px 5px;
+    background-color: rgba(0, 0, 0, 0.85);
 
     @media only screen and (max-width: 968px) {
         position: absolute;
         right: 0;
         bottom: -135%;
-        background-color: rgba(0, 0, 0, 0.85);
     }
 
     @media only screen and (max-width: 480px) {

@@ -1,12 +1,11 @@
 import React from "react";
-import { ShowcaseSection } from "app/components";
+import { ShowcaseSection, TrendingSection } from "app/components";
 
 export default function HomePage() {
     return (
         <React.Fragment>
-            <ShowcaseSection>
-                
-            </ShowcaseSection>
+            <ShowcaseSection/>
+            <TrendingSection />
         </React.Fragment>
     );
 }

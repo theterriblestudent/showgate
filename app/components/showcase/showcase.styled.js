@@ -48,6 +48,8 @@ export const MovieInfo = styled(FlexContainer).attrs({justify_content: "center",
     position: relative;
     z-index: 2;
 
+    transform: translateY(-3%);
+
     img {width: 100%};
 
     @media only screen and (max-width: 968px) {
