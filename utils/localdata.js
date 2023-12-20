@@ -77,7 +77,7 @@ const movies = [
      {
          title: "Transformers: The Last Kinght",
          trailer: "",
-         logo: "https://picfiles.alphacoders.com/859/85942.png",
+         logo: "https://images.squarespace-cdn.com/content/v1/5adba1849d5abb141e5bd78e/1546718440310-VUAW5U8AQGHWJSXBE29S/transformers.png",
          backdrop: "https://s3.r29static.com/bin/entry/e88/0,0,2000,1050/x,80/1809742/image.jpg",
          poster: "https://i.pinimg.com/originals/e9/b0/db/e9b0db2b1342e6d5acf6e511356f0fc1.jpg",
          score: 5.2,

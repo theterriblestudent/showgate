@@ -16,7 +16,7 @@ export const StyledForm = styled(FlexContainer)`
         position: absolute;
         right: 0;
         bottom: -135%;
-        background-color: var(--dark-background-color);
+        background-color: rgba(0, 0, 0, 0.85);
     }
 
     @media only screen and (max-width: 480px) {

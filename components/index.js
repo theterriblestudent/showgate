@@ -3,6 +3,7 @@ import NavBar from "./navbar/navbar";
 import SearchForm from "./navbar/components/searchform/searchform";
 import Overlay from "./overlay/overlay.styled";
 import { Button } from "./button/button.style";
+import BriefInfo from "./breifinfo/briefinfo";
 
 export {GridContainer, FlexContainer, NavBar, SearchForm, Button};
-export {Overlay};
+export {Overlay, BriefInfo};
