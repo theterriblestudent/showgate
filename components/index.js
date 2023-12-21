@@ -5,6 +5,7 @@ import Overlay from "./overlay/overlay.styled";
 import { Button } from "./button/button.style";
 import BriefInfo from "./breifinfo/briefinfo";
 import ContentStripe from "./contentstripe/contentstripe";
+import Title from "./title/title";
 
 export {GridContainer, FlexContainer, NavBar, SearchForm, Button};
-export {Overlay, BriefInfo, ContentStripe};
+export {Overlay, BriefInfo, ContentStripe, Title};

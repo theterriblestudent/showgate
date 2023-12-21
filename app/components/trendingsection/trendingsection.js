@@ -5,12 +5,12 @@ import useTrendingSection from "./useTrendingSection";
 
 function TrendingSection() {
 
-    const {trendData, endpointBuilder, setTrendPeriod} = useTrendingSection();
+    const {trendData, endpointBuilder, setTrendPeriod, trendPeriod} = useTrendingSection();
 
     return (
         <ContentStripe 
             endpointBuilder={endpointBuilder} controlOptions={trendData} 
-            setDataState={setTrendPeriod} more/>
+            setDataState={setTrendPeriod} more dataState={trendPeriod}/>
     );
 }
 

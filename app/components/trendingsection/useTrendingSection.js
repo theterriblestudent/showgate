@@ -3,20 +3,20 @@
 import React from "react";
 
 function useTrendingSection() {
-    const trendData = {
-        today: {
+    const trendData = [
+         {
             title: "Trending Today",
             endpoint: "all/day",
             button_text: "Today",
         },
-        all_week: {
+        {
             title: "Trending All Week",
             endpoint: "all/week",
             button_text: "All Week"
         }
-    }
+    ];
 
-    const [trendPeriod, setTrendPeriod] = React.useState(trendData.today);
+    const [trendPeriod, setTrendPeriod] = React.useState(trendData[0]);
 
     const {REACT_APP_API_KEY_TMDB: API_KEY_TMDB} = process.env;
 
@@ -25,7 +25,7 @@ function useTrendingSection() {
         return endpoint;
     }
 
-    return {endpointBuilder, trendData, setTrendPeriod}
+    return {endpointBuilder, trendData, setTrendPeriod, trendPeriod};
 
 }
 

@@ -11,7 +11,7 @@ const StyledNavbar = styled(GridContainer).attrs({className:"full-width nav-bar"
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: 10;
     transition: background-color 0.5s;
 
     @media only screen and (max-width: 968px) {

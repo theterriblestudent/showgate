@@ -10,7 +10,7 @@ function useFetch(url) {
         .then((response) => response.json())
         .then(data => setFetchedData(data))
         .catch(error => console.log(error));
-    }, []);
+    }, [url]);
 
     return fetchedData;
 }

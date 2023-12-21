@@ -3,6 +3,6 @@
 import styled from "styled-components"
 import {GridContainer} from 'components';
 
-export const StyledContentStripe = styled(GridContainer).attrs({className: "full-width"})`
+export const StyledContentStripe = styled(GridContainer).attrs({className: "full-width container-grid"})`
     padding: 50px 0 50px 0;
 `;
