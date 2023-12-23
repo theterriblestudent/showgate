@@ -1,7 +1,12 @@
 'use client'
 
-import React from "react"
+import useFetch from "hooks/useFetch"
 
-function useContentStripe() {
+function useContentStripe(urlBuilder) {
+    const data = useFetch(urlBuilder());
+
+    return data;
     
 }
+
+export default useContentStripe;

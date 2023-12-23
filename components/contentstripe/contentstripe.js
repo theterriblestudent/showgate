@@ -1,10 +1,16 @@
-import {StyledContentStripe} from './contentstripe.styled';
 import {Title} from 'components';
+import useContentStripe from './useContentStripe';
+import {StyledContentStripe, ScrollableContainer} from './contentstripe.styled';
 
-function ContentStripe({endpointBuilder, cardBuilder, controlOptions, more, setDataState, dataState}) {
+
+function ContentStripe({urlBuilder, getContentCards, controlOptions, more, setDataState, dataState}) {
+    const data = useContentStripe(urlBuilder)
     return (
         <StyledContentStripe>
-            <Title more dataState={dataState} controlOptions={controlOptions} setDataState={setDataState}/>
+            <Title more={more} dataState={dataState} controlOptions={controlOptions} setDataState={setDataState}/>
+            <ScrollableContainer>
+                {getContentCards(data ? data.results : [])}
+            </ScrollableContainer>
         </StyledContentStripe>
     );
 }

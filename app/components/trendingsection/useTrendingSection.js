@@ -20,12 +20,12 @@ function useTrendingSection() {
 
     const {REACT_APP_API_KEY_TMDB: API_KEY_TMDB} = process.env;
 
-    function endpointBuilder() {
-        const endpoint = `https://api.themoviedb.org/3/trending/${trendPeriod.endpoint}?api_key=${API_KEY_TMDB}`;
+    function urlBuilder() {
+        const endpoint = `https://api.themoviedb.org/3/trending/${trendPeriod.endpoint}?api_key=f4b38564562890f30d78269e51e393a2`;
         return endpoint;
     }
 
-    return {endpointBuilder, trendData, setTrendPeriod, trendPeriod};
+    return {urlBuilder, trendData, setTrendPeriod, trendPeriod};
 
 }
 
