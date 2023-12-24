@@ -1,5 +1,5 @@
 'use client'
-import { generateMediaCards } from "utils/mediaCardBuilder";
+import { generateMediaCards } from "utils/cardbuilders";
 import { ContentStripe } from "components";
 import useTrendingSection from "./useTrendingSection";
 

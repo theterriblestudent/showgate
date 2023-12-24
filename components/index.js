@@ -8,6 +8,8 @@ import ContentStripe from "./contentstripe/contentstripe";
 import Title from "./title/title";
 import MediaCard from "./mediacard/mediacard";
 import Loader from "./loader/loader";
+import PeoplesCard from "./peoplecard/peoplecard";
 
 export {GridContainer, FlexContainer, NavBar, SearchForm, Button};
 export {Overlay, BriefInfo, ContentStripe, Title, Loader, MediaCard};
+export {PeoplesCard};

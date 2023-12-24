@@ -4,12 +4,11 @@ import styled from "styled-components"
 import {GridContainer, FlexContainer} from 'components';
 
 export const StyledContentStripe = styled(GridContainer).attrs({className: "full-width container-grid"})`
-    padding: 50px 0 50px 0;
     position: relative;
 
     .chevron {
         position: absolute;
-        top: 50%;
+        top: 40%;
         transform: translateY(-50%);
 
         font-size: 2rem;
@@ -29,7 +28,11 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
     }
 `;
 
-export const ScrollableContainer = styled(FlexContainer).attrs({className: "full-width", gap:"20px"})`
+export const ScrollableContainer = styled(FlexContainer).attrs({
+    className: "full-width",
+    gap:"20px",
+    align_content: "start"
+})`
     flex-wrap: nowrap;
     overflow-x: scroll;
 
@@ -39,7 +42,7 @@ export const ScrollableContainer = styled(FlexContainer).attrs({className: "full
     width: 99%;
     margin: 0 auto;
 
-    margin-top: 15px;
+    margin-top: 40px;
     padding-left: 5%;
 
     border-radius: 7px 7px 0 0;
