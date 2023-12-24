@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const GridContainer = styled.div.attrs({className:"container-grid"})`
     --padding-inline: 5%;
-    --max-content: 1700px;
+    --max-content: 1800px;
 
     width: 100%;
     display: grid;

@@ -6,7 +6,7 @@ import { no_poster_image, no_backdrop_image } from "assets";
 import {ReleaseDate, Genres, Title} from "./mediacard.styled";
 import {StyledMediaCard, StyledMediaInfo} from "./mediacard.styled";
 
-function MediaCard(media_info) {
+function MediaCard({media_info}) {
     const {getGenres, releaseDateHelper} = useMediaCard(media_info);
 
     return (
@@ -21,7 +21,7 @@ function MediaCard(media_info) {
                 <Image alt="Media Image" />
             </picture>
             <StyledMediaInfo>
-                <Title>{media_info.title || media_info.original_title}</Title>
+                <Title>{media_info.title || media_info.original_title || media_info.name || media_info.original_name}</Title>
                 <Genres>{getGenres()}</Genres>
                 <ReleaseDate>{getReleaseDate(releaseDateHelper())}</ReleaseDate>
             </StyledMediaInfo>

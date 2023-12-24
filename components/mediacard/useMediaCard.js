@@ -3,9 +3,6 @@ import React from "react";
 import useFetch from "hooks/useFetch";
 
 function useMediaCard(media_info) {
-
-    const {REACT_APP_API_KEY_TMDB: TMBB_API_KEY} = process.env
-
     function getMediaType() {
         return media_info.release_date ? "movie" : "tv";
     }
@@ -16,7 +13,7 @@ function useMediaCard(media_info) {
         );
     }
 
-    const data = useFetch(`https://api.themoviedb.org/3/${getMediaType()}/${media_info.id}?api_key=${TMBB_API_KEY}&language=en-US`);
+    const data = useFetch(`https://api.themoviedb.org/3/${getMediaType()}/${media_info.id}?api_key=f4b38564562890f30d78269e51e393a2&language=en-US`);
 
     function getGenres() {
         if (!data) return <p>Getting Genres...</p>;

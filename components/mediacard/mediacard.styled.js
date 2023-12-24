@@ -24,7 +24,7 @@ export const StyledMediaCard = styled.div`
 `;
 
 export const StyledMediaInfo = styled.div `
-    padding: 15px 20px 20px 20px;
+    padding: 15px 20px 20px 0px;
     max-width: 360px;
     @media only screen and (max-width: 968px) {
         display: none;
@@ -68,8 +68,12 @@ export const Genres = styled(FlexContainer).attrs({gap:"5px"})`
     div {
         width: 5px;
         height: 5px;
+
         border-radius: 50%;
+
         margin-top: 3px;
+
+        background-color: var(--accent-color);
     }
 
     p {
@@ -82,7 +86,7 @@ export const Genres = styled(FlexContainer).attrs({gap:"5px"})`
 `;
 
 export const ReleaseDate = styled.p `
-    font-family: var(--seconday-font);
+    font-family: var(--secondary-font);
     color: var(--dark-foreground-color);
     font-size: 0.9rem;
     font-weight: 500;

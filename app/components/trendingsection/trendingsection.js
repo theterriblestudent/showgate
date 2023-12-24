@@ -8,10 +8,11 @@ function TrendingSection() {
     const {trendData, urlBuilder, setTrendPeriod, trendPeriod} = useTrendingSection();
 
     return (
-        <ContentStripe 
-            urlBuilder={urlBuilder} controlOptions={trendData} 
-            setDataState={setTrendPeriod} more dataState={trendPeriod}
-            getContentCards={generateMediaCards}/>
+        <div className="full-width" style={{marginTop: "-160px"}}>
+            <ContentStripe urlBuilder={urlBuilder} controlOptions={trendData} 
+                           setDataState={setTrendPeriod} more dataState={trendPeriod}
+                           getContentCards={generateMediaCards}/>
+        </div>
     );
 }
 
