@@ -1,6 +1,7 @@
 'use client';
 
 function useUpcomingSection() {
+
     const upcomingData = {title: "Upcoming Movies"}
 
     function urlBuilder() {

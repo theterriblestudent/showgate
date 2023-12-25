@@ -2,9 +2,11 @@
 import Image from "next/image";
 import useMediaCard from "./useMediaCard";
 import { getReleaseDate } from "utils/date";
+import { FlexContainer } from "components";
 import { no_poster_image, no_backdrop_image } from "assets";
 import {ReleaseDate, Genres, Title} from "./mediacard.styled";
-import {StyledMediaCard, StyledMediaInfo} from "./mediacard.styled";
+import { Star, AddButton, RatingNumber } from "./mediacard.styled";
+import {StyledMediaCard, StyledMediaInfo, MediaInfoGrid} from "./mediacard.styled";
 
 function MediaCard({media_info}) {
     const {getGenres, releaseDateHelper} = useMediaCard(media_info);
@@ -22,8 +24,15 @@ function MediaCard({media_info}) {
             </picture>
             <StyledMediaInfo>
                 <Title>{media_info.title || media_info.original_title || media_info.name || media_info.original_name}</Title>
-                <Genres>{getGenres()}</Genres>
-                <ReleaseDate>{getReleaseDate(releaseDateHelper())}</ReleaseDate>
+                <MediaInfoGrid>
+                    <Genres>{getGenres()}</Genres>
+                    <FlexContainer gap="2px" justify_content="end">
+                        <Star />
+                        <RatingNumber>{Math.round(media_info.vote_average * 10) / 10}</RatingNumber>
+                    </FlexContainer>
+                    <ReleaseDate>{getReleaseDate(releaseDateHelper())}</ReleaseDate>
+                    <AddButton />
+                </MediaInfoGrid>
             </StyledMediaInfo>
         </StyledMediaCard>
     )

@@ -2,15 +2,17 @@
 
 import React from "react";
 
-function useFetch(url) {
+function useFetch(url, inView=true) {
     const [fetchedData, setFetchedData] = React.useState(null);
 
     React.useEffect(() => {
-        fetch(url)
-        .then((response) => response.json())
-        .then(data => setFetchedData(data))
-        .catch(error => console.log(error));
-    }, [url]);
+        if (inView) {
+            fetch(url)
+            .then((response) => response.json())
+            .then(data => setFetchedData(data))
+            .catch(error => console.log(error));
+        }
+    }, [url, inView]);
 
     return fetchedData;
 }

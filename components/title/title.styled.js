@@ -37,6 +37,10 @@ export const ButtonsContainer = styled(FlexContainer)`
     position: relative;
     margin-left: 25px;
 
+    @media only screen and (max-width: 968px) {
+            display: none;
+        }
+
     button {
         background: transparent;
         border: none;

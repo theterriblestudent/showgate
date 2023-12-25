@@ -10,7 +10,6 @@ function Title({controlOptions, more, setDataState, dataState}) {
 
     return (
         <StyledTitle>
-            <div />
             <StyledTitleText >
                 {dataState.title}
             </StyledTitleText>

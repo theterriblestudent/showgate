@@ -4,6 +4,12 @@ import styled from "styled-components"
 import {GridContainer, FlexContainer} from 'components';
 
 export const StyledContentStripe = styled(GridContainer).attrs({className: "full-width container-grid"})`
+    margin-bottom: 80px;
+
+    @media only screen and (max-width: 968px) {
+        margin-bottom: 45px;
+    } 
+
     position: relative;
 
     .chevron {
@@ -16,6 +22,10 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
         color: var(--accent-color);
 
         z-index: 500;
+
+        @media only screen and (max-width: 968px) {
+            display: none;
+        }
     }
 
     .left-chevron {
@@ -36,18 +46,23 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
     flex-wrap: nowrap;
     overflow-x: scroll;
 
-    min-height: 400px;
+    min-height: 200px;
     min-width: 99%;
 
     width: 99%;
     margin: 0 auto;
 
     margin-top: 40px;
-    padding-left: 5%;
+    padding-left: 4.5%;
 
     border-radius: 7px 7px 0 0;
 
     scroll-behavior: smooth;
+
+    @media only screen and (max-width: 968px) {
+        margin-top: 20px;
+        padding-left: 5%;
+    }
 
     &::-webkit-scrollbar {
         display: none;

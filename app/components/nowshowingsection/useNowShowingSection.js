@@ -6,9 +6,9 @@ function useNowShowingSection() {
 
     const contentStripeRef = React.useRef();
 
-    React.useLayoutEffect(() => {
-        contentStripeRef.current.style.background = "red";
-    }, [])
+    // React.useLayoutEffect(() => {
+    //     contentStripeRef.current.style.background = "red";
+    // }, [])
 
     const nowShowingData = [
          {
