@@ -21,7 +21,25 @@ function useTitle() {
         setDataState(controlOptions[buttonIndex]);
     }
 
-    return {switchRef, handleTitleButtonClick};
+    function getMobileButtonText(controlOptions, dataState) {
+         let buttonText;
+
+         controlOptions.forEach(option => {
+            if (option.title !== dataState.title)
+                buttonText = option.button_text
+         })
+
+         return buttonText;
+    }
+
+    function handleMobileButtonClick(controlOptions, setDataState, dataState) {
+        controlOptions.forEach(option => {
+            if (option.title !== dataState.title) 
+                setDataState(option);
+        });
+    }
+
+    return {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick};
     
 }
 

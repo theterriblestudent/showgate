@@ -7,10 +7,10 @@ export default function HomePage() {
     return (
         <React.Fragment>
             <ShowcaseSection/>
-            <TrendingSection />
+            <PopularSection />
             <UpcomingSection />
             <NowShowingSection />
-            <PopularSection />
+            <TrendingSection />
             <TopRatedSection />
             <PopularPeopleSection />
             <JoinSection />

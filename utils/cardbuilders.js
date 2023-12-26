@@ -1,4 +1,4 @@
-import { MediaCard, Loader ,PeoplesCard} from "components";
+import { MediaCard, Loader ,PeoplesCard, RankCard} from "components";
 
 function generateMediaCards(data) {
     if (data.length === 0) return <Loader />
@@ -21,4 +21,11 @@ function generatePeoplesCards(data) {
     )
 }
 
-export {generateMediaCards, generatePeoplesCards};
+function generateRankCards(data) {
+    if (data.lenght === 0) return <Loader />
+    return data.map((media, index) => {
+        return <RankCard poster_path={media.poster_path} index={index} />
+    });
+}
+
+export {generateMediaCards, generatePeoplesCards, generateRankCards};

@@ -1,16 +1,19 @@
 'use client'
-import { generateMediaCards } from "utils/cardbuilders";
 import { ContentStripe } from "components";
+import { generateMediaCards } from "utils/cardbuilders";
 import usePopularSection from "./usePopularSection"
+import { StyledPopularSection } from "./popularsection.styled";
 
 function PopularSection() {
 
     const {popularData, urlBuilder, setPopularType, popularType} = usePopularSection();
 
     return (
-        <ContentStripe urlBuilder={urlBuilder} controlOptions={popularData} 
-                        setDataState={setPopularType} more dataState={popularType}
-                        getContentCards={generateMediaCards}/>
+        <StyledPopularSection>
+            <ContentStripe urlBuilder={urlBuilder} controlOptions={popularData} 
+                            setDataState={setPopularType} more dataState={popularType}
+                            getContentCards={generateMediaCards}/>
+        </StyledPopularSection>
     );
 }
 

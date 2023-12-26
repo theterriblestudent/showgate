@@ -1,11 +1,15 @@
 'use client';
 
 import styled from "styled-components";
-import {FlexContainer} from "components";
+import {Button, FlexContainer} from "components";
 import { FaChevronRight } from "react-icons/fa";
 
 
-export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px"})``;
+export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px"})`
+    @media only screen and (max-width: 968px) {
+        justify-content: space-between;
+    }
+`;
 
 export const StyledTitleText = styled.h1`
     font-family: var(--primary-font);
@@ -71,4 +75,12 @@ export const ButtonsContainer = styled(FlexContainer)`
 
         transition: left 0.5s ease;
     }   
+`;
+
+export const MobileButton = styled(Button)`
+    display: none;
+
+    @media only screen and (max-width: 968px) {
+        display: block;
+    }
 `;
