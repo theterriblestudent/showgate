@@ -6,7 +6,7 @@ export const StyledBoxOfficeCard = styled.div`
     position: relative;
 
     margin-right: 35px;
-    margin-top: 45px;
+    margin-top: 40px;
 
     flex-shrink: 0;
 

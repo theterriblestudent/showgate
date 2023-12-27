@@ -7,6 +7,8 @@ import { FaChevronRight } from "react-icons/fa";
 
 export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px"})`
     justify-content: space-between;
+
+    background: transparent;
     
 `;
 
