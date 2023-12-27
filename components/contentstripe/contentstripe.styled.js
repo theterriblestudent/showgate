@@ -59,6 +59,8 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
 
     scroll-behavior: smooth;
 
+    transition: opacity 0.25s;
+
     @media only screen and (max-width: 968px) {
         margin-top: 20px;
         padding-left: 5%;

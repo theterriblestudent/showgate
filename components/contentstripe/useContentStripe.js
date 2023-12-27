@@ -24,7 +24,7 @@ function useContentStripe(urlBuilder) {
 
     }
 
-    return {data, mergedRef, inView, handleChevronClick};
+    return {data, mergedRef, inView, handleChevronClick, scrollableContainer};
     
 }
 

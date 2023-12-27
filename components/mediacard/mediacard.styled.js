@@ -51,8 +51,8 @@ export const Title = styled.div`
 
     font-size: 1.25rem;
     font-size: clamp(1.25rem, 1rem + 0.800vw, 1.55rem);
-    font-family: var(--primary-font);
-    font-weight: 500;
+    font-family: var(--secondary-font);
+    font-weight: 600;
     text-overflow: ellipsis;
     color: var(--light-foreground-color);
 

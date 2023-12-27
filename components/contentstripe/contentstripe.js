@@ -5,10 +5,11 @@ import {StyledContentStripe, ScrollableContainer} from './contentstripe.styled';
 
 
 function ContentStripe({contentStripeRef, urlBuilder, getContentCards, controlOptions, more, setDataState, dataState}) {
-    const {data, inView, handleChevronClick, mergedRef} = useContentStripe(urlBuilder)
+    const {data, inView, handleChevronClick, mergedRef, scrollableContainer} = useContentStripe(urlBuilder)
     return (
         <StyledContentStripe ref={contentStripeRef}>
-            <Title more={more} dataState={dataState} controlOptions={controlOptions} setDataState={setDataState}/>
+            <Title more={more} dataState={dataState} scrollableContainer={scrollableContainer}
+                   controlOptions={controlOptions} setDataState={setDataState}/>
             
             <FaChevronCircleLeft onClick={() => handleChevronClick("LEFT")}
                                  className="chevron left-chevron" />

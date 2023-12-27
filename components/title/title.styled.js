@@ -6,9 +6,8 @@ import { FaChevronRight } from "react-icons/fa";
 
 
 export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px"})`
-    @media only screen and (max-width: 968px) {
-        justify-content: space-between;
-    }
+    justify-content: space-between;
+    
 `;
 
 export const StyledTitleText = styled.h1`
@@ -73,7 +72,7 @@ export const ButtonsContainer = styled(FlexContainer)`
         border-radius: 100px;
         background-color: var(--accent-color);
 
-        transition: left 0.5s ease;
+        transition: left 0.5s ease, width 0.25s ease-in;
     }   
 `;
 

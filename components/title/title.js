@@ -1,21 +1,22 @@
 'use client';
 import React from "react";
+import { FlexContainer } from "components";
 import useTitle from "./useTitle";
 import { StyledChev, StyledTitle, StyledTitleText } from "./title.styled";
-import { ButtonsContainer , MobileButton } from "./title.styled";
+import { ButtonsContainer, MobileButton } from "./title.styled";
 
-function Title({controlOptions, more, setDataState, dataState}) {
+function Title({controlOptions, more, setDataState, dataState, scrollableContainer}) {
 
-    const {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick} = useTitle();
+    const {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick} = useTitle(scrollableContainer);
 
     return (
         <StyledTitle>
-            <StyledTitleText >
-                {dataState.title}
-            </StyledTitleText>
-
-            {more &&<StyledChev />}
-
+            <FlexContainer gap="15px">
+                <StyledTitleText >
+                    {dataState.title}
+                </StyledTitleText>
+                {more &&<StyledChev />}
+            </FlexContainer>
             {controlOptions &&
             <React.Fragment>
                     <ButtonsContainer>

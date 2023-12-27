@@ -2,13 +2,32 @@
 import React from "react";
 import { colors } from "styles/colors";
 
-function useTitle() {
+function useTitle(scrollableContainer) {
     const switchRef = React.useRef();
+
+    function changeContent(setDataState, dataState) {
+        scrollableContainer.current.style.opacity =  0;
+
+        window.setTimeout(() => {
+            setDataState(dataState);
+        }, 250);
+
+        window.setTimeout(() => {
+            scrollableContainer.current.style.opacity =  1;
+        }, 600);
+    }
 
     function handleTitleButtonClick(buttonIndex, controlOptions, setDataState) {
         const buttons = switchRef.current.parentElement.querySelectorAll("button");
         
         switchRef.current.style.left = `${buttonIndex * 50}%`;
+        switchRef.current.style.width = "55%";
+
+        window.setTimeout(() => {
+            switchRef.current.style.width = "50%";
+        }, 250);
+
+        changeContent(setDataState, controlOptions[buttonIndex]);
 
         buttons[buttonIndex].style.color = colors.light_foreground;
 
@@ -18,7 +37,6 @@ function useTitle() {
             }
         });
 
-        setDataState(controlOptions[buttonIndex]);
     }
 
     function getMobileButtonText(controlOptions, dataState) {
@@ -35,7 +53,7 @@ function useTitle() {
     function handleMobileButtonClick(controlOptions, setDataState, dataState) {
         controlOptions.forEach(option => {
             if (option.title !== dataState.title) 
-                setDataState(option);
+                changeContent(setDataState, option);
         });
     }
 
