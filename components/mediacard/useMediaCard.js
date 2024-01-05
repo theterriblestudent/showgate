@@ -36,7 +36,7 @@ function useMediaCard(media_info) {
         );
     };
 
-    return {getGenres, releaseDateHelper};
+    return {getGenres, releaseDateHelper, mediaType: getMediaType()};
 }
 
 export default useMediaCard;

@@ -1,5 +1,6 @@
 'use client';
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import useMediaCard from "./useMediaCard";
 import { getReleaseDate } from "utils/date";
 import { FlexContainer } from "components";
@@ -9,7 +10,8 @@ import { Star, AddButton, RatingNumber } from "./mediacard.styled";
 import {StyledMediaCard, StyledMediaInfo, MediaInfoGrid} from "./mediacard.styled";
 
 function MediaCard({media_info}) {
-    const {getGenres, releaseDateHelper} = useMediaCard(media_info);
+    const {getGenres, releaseDateHelper, mediaType} = useMediaCard(media_info);
+    const router = useRouter();
 
     return (
         <StyledMediaCard>
@@ -23,7 +25,9 @@ function MediaCard({media_info}) {
                 <Image alt="Media Image" />
             </picture>
             <StyledMediaInfo>
-                <Title>{media_info.title || media_info.original_title || media_info.name || media_info.original_name}</Title>
+                <Title onClick={() => router.push(`/view/${mediaType}/${media_info.id}`)}>
+                    {media_info.title || media_info.original_title || media_info.name || media_info.original_name}
+                </Title>
                 <MediaInfoGrid>
                     <Genres>{getGenres()}</Genres>
                     <FlexContainer gap="2px" justify_content="end">
