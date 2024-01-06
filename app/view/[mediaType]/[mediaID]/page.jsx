@@ -8,7 +8,7 @@ export default function MediaInfo({params}) {
     const { credits } = useMediaInfo(params); 
   return (
     <React.Fragment>
-        <MediaOverview />
+        <MediaOverview credits={credits} media_type={params.mediaType} media_id={params.mediaID} />
     </React.Fragment>
   )
 };

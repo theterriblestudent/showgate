@@ -1,21 +1,19 @@
 import {StyledBriefInfo, StyledRating, StyledReleaseYear} from './briefinfo.styled';
-import {StyledSeperator, StyledRuntime, StyledPG} from './briefinfo.styled';
-import { FaStar } from 'react-icons/fa';
-import { colors } from 'styles/colors';
+import {StyledSeperator, StyledRuntime, StyledPG, StyledStar} from './briefinfo.styled';
 
-function BriefInfo({rating, releaseYear, runtime, PG}) {
+function BriefInfo({rating, releaseYear, runtime, PG, small}) {
     return (
-        <StyledBriefInfo>
-                <StyledRating>
-                    <FaStar size="1.8rem" color={colors.accent} />
+        <StyledBriefInfo small={small}>
+                <StyledRating small={small}>
+                    <StyledStar small={small} />
                     <h4>{Math.round(rating * 10) / 10}</h4>
                 </StyledRating>
             <StyledSeperator />
-            <StyledRuntime>{runtime}</StyledRuntime>
+            <StyledRuntime small={small}>{runtime}</StyledRuntime>
             <StyledSeperator />
-            <StyledReleaseYear>{releaseYear}</StyledReleaseYear>
+            <StyledReleaseYear small={small}>{releaseYear}</StyledReleaseYear>
             <StyledSeperator />
-            <StyledPG>{PG}</StyledPG>
+            <StyledPG small={small}>{PG}</StyledPG>
         </StyledBriefInfo>
     );
 };

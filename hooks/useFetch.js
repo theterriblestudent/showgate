@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function useFetch(url, inView=true) {
+function useFetch(url, inView=true, fallbackData) {
     const [fetchedData, setFetchedData] = React.useState(null);
 
     React.useEffect(() => {
@@ -10,7 +10,13 @@ function useFetch(url, inView=true) {
             fetch(url)
             .then((response) => response.json())
             .then(data => setFetchedData(data))
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                
+                if (fallbackData)
+                    setFetchedData(fallbackData);
+                
+            });
         }
     }, [url, inView]);
 
