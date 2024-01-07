@@ -10,7 +10,8 @@ import MediaCard from "./mediacard/mediacard";
 import Loader from "./loader/loader";
 import PeoplesCard from "./peoplecard/peoplecard";
 import RankCard from "./rankmediacard/rankmediacard";
+import CastCard from "./castcard/castcard";
 
 export {GridContainer, FlexContainer, NavBar, SearchForm, Button};
 export {Overlay, BriefInfo, ContentStripe, Title, Loader, MediaCard};
-export {PeoplesCard, RankCard};
+export {PeoplesCard, RankCard, CastCard};

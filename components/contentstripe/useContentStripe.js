@@ -4,13 +4,15 @@ import useMergedRef from "@react-hook/merged-ref";
 import { useInView } from "react-intersection-observer";
 import useFetch from "hooks/useFetch"
 
-function useContentStripe(urlBuilder) {
+function useContentStripe(urlBuilder, passedData) {
 
     const {ref, inView, entry} = useInView({
         triggerOnce: true
     })
 
-    const data = useFetch(urlBuilder(), inView);
+    const fetchedData = useFetch(urlBuilder ? urlBuilder() : "", inView);
+
+    const contentData =  urlBuilder ? fetchedData : passedData;
 
     const scrollableContainer = React.useRef();
 
@@ -24,7 +26,7 @@ function useContentStripe(urlBuilder) {
 
     }
 
-    return {data, mergedRef, inView, handleChevronClick, scrollableContainer};
+    return {contentData, mergedRef, inView, handleChevronClick, scrollableContainer};
     
 }
 

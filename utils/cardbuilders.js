@@ -1,4 +1,4 @@
-import { MediaCard, Loader ,PeoplesCard, RankCard} from "components";
+import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard} from "components";
 
 function generateMediaCards(data) {
     if (data.length === 0) return <Loader />
@@ -22,10 +22,19 @@ function generatePeoplesCards(data) {
 }
 
 function generateRankCards(data) {
-    if (data.lenght === 0) return <Loader />
+    if (data.length === 0) return <Loader />
     return data.map((media, index) => {
         return <RankCard poster_path={media.poster_path} index={index} />
     });
 }
 
-export {generateMediaCards, generatePeoplesCards, generateRankCards};
+function generateCastCards(data) {
+    if (data.length === 0) return <Loader />
+    return data.map(cast => {
+        return <CastCard profile_image={cast.profile_path}
+                         name={cast.name || cast.original_name}
+                         character={cast.character} />
+    });
+}
+
+export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards};

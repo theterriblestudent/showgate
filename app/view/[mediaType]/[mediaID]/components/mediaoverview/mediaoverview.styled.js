@@ -5,7 +5,11 @@ import { GridContainer, FlexContainer, Button } from "components";
 
 export const StyledMediaOverview = styled(GridContainer).attrs({className: "full-width"})`
     min-height: 50vh;
+
+    position: relative;
+
     padding-bottom: 50px;
+    margin-bottom: 40px;
 
     background-image: ${props => {
             if (props.backdrop_path)
@@ -35,6 +39,7 @@ export const OverviewContent = styled(FlexContainer).attrs({
 })`
     position: relative;
     z-index: 4;
+    
     padding-top: 110px;
 
     @media only screen and (max-width: 968px) {
@@ -43,7 +48,9 @@ export const OverviewContent = styled(FlexContainer).attrs({
 
     img {
         width: clamp(16.875rem, 15.536rem + 4.286vw, 18.75rem);
+
         border-radius: 3px;
+
         @media only screen and (max-width: 968px){
             display: none;
         }
@@ -54,7 +61,7 @@ export const StyledMediaInfo = styled(FlexContainer).attrs({
     flex_direction: "column",
     justifiy_content: "center",
     align_content: "flex-start",
-    gap: "1.5rem",
+    gap: "1.7rem",
 })`
     h1, h2 {
         color: var(--light-foreground-color);
@@ -64,17 +71,25 @@ export const StyledMediaInfo = styled(FlexContainer).attrs({
 
     h1 {
         font-size: 1.8rem;
-        font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.5rem);
+        font-size: clamp(1.8rem, 1.55rem + 1vw, 2.3rem);
+
+        @media only screen and (max-width: 968px) {
+            margin-bottom: -5px;
+        }
     }
 
     h2 {
         font-size: 1.45rem;
-        font-size: clamp(1.45rem, 1.129rem + 1.029vw, 1.9rem);
+        font-size: clamp(1.45rem, 1.325rem + 0.5vw, 1.7rem);
 
         @media only screen and (max-width: 968px) {
             margin-bottom: -12px;
             margin-top: 7px;
         }
+    }
+
+    @media only screen and (max-width: 968px) {
+        gap: 1.5rem;
     }
 `;
 
@@ -87,10 +102,7 @@ export const WatchlistButton = styled(Button).attrs({button_type: "accent"})`
 export const WatchlistButtonMobile = styled(Button).attrs({button_type: "accent"})`
     display: none;
 
-    padding: 5px;
-    margin-right: 5px;
-
-    border-radius: 50%;
+    margin-right: -5px;
 
     @media only screen and (max-width: 968px) {
         display: block;
@@ -104,13 +116,15 @@ export const StyledPlus = styled(FaPlus)`
 
 export const StyledSynopsis = styled.p`
     font-family: var(--secondary-font);
-    font-size: 1rem;
-    font-size: clamp(1rem, 0.911rem + 0.286vw, 1.125rem);
+    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.05rem + 0.2vw, 1.2rem);
     color: var(--light-foreground-color);
+
+    line-height: 1.75rem;
     
     max-width: 95%;
     
     @media only screen and (max-width: 968px){
-        line-height: 1.6rem;
+        line-height: 1.5rem;
     }
 `;

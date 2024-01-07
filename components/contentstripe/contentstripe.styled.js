@@ -53,7 +53,7 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
     margin: 0 auto;
 
     margin-top: 20px;
-    padding-left: 4.5%;
+    padding-left: ${props => props.small ? "max(calc((100vw - 1200px)/2 - 1%), 4.5%)" : "4.5%"};
 
     border-radius: 7px 7px 0 0;
 
