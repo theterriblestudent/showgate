@@ -93,7 +93,7 @@ export const StyledMediaInfo = styled(FlexContainer).attrs({
     }
 `;
 
-export const WatchlistButton = styled(Button).attrs({button_type: "accent"})`
+export const WatchlistButton = styled(Button)`
     @media only screen and (max-width: 968px) {
         display: none;
     }

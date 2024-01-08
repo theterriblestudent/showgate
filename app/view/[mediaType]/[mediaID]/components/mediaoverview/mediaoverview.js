@@ -25,7 +25,7 @@ function MediaOverview ({credits, media_type, media_id}) {
                         <StyledMediaInfo>
                             <h1>{mediaInfo.title || mediaInfo.name}</h1>
                             <FlexContainer align_content="flex-start" gap="20px">
-                                <WatchlistButton button_type="accent">Watchlist</WatchlistButton>
+                                <WatchlistButton>Watchlist</WatchlistButton>
                                 <WatchlistButtonMobile><StyledPlus /></WatchlistButtonMobile>
                                 <BriefInfo rating={mediaInfo.vote_average} small
                                             releaseYear={getRealeaseYear(mediaInfo.release_date || mediaInfo.first_air_date)}

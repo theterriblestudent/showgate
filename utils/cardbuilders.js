@@ -1,4 +1,5 @@
-import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard} from "components";
+import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard, PosterCard} from "components";
+import { getReleaseDate } from "./date";
 
 function generateMediaCards(data) {
     if (data.length === 0) return <Loader />
@@ -37,4 +38,18 @@ function generateCastCards(data) {
     });
 }
 
-export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards};
+function generatePosterCards(data) {
+    if (data.length === 0) return <Loader />;
+    return (
+        data.map(media => {
+            return (
+                <PosterCard image={ `http://image.tmdb.org/t/p/w342${media.poster_path}` }
+                releaseDate={getReleaseDate(media.release_date || media.first_air_date)}
+                media_id={media.id}
+                media_type={media.release_date ? "movie" : "tv"} />
+            );
+        })
+    );
+}
+
+export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards, generatePosterCards};

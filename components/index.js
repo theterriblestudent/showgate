@@ -11,7 +11,9 @@ import Loader from "./loader/loader";
 import PeoplesCard from "./peoplecard/peoplecard";
 import RankCard from "./rankmediacard/rankmediacard";
 import CastCard from "./castcard/castcard";
+import PosterCard from "./postercard/postercard";
+import CreditsCard from "./creditscard/creditscard";
 
 export {GridContainer, FlexContainer, NavBar, SearchForm, Button};
 export {Overlay, BriefInfo, ContentStripe, Title, Loader, MediaCard};
-export {PeoplesCard, RankCard, CastCard};
+export {PeoplesCard, RankCard, CastCard, PosterCard, CreditsCard};

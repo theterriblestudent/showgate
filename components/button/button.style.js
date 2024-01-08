@@ -17,8 +17,8 @@ export const Button = styled.a`
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background-color: ${props => props.button_type==="accent" ? "var(--accent-color)" : "var(--light-background-color)"};
-    color: var(--light-foreground-color);
+    background-color: ${props => props.button_type ==="accent" ? "var(--accent-color)" : "var(--light-background-color)"};
+    color: ${props => props.button_type === "accent" ? "var(--light-foreground-color)" : "var(--accent-color)"};
 
     &:hover {
         transform: scale(0.95);
