@@ -22,7 +22,7 @@ function MediaCard({media_info}) {
                 <source media="(max-width: 968px)"
                         srcSet={media_info.poster_path ? 
                             `https://image.tmdb.org/t/p/w342${media_info.poster_path}` : no_poster_image}/>
-                <Image alt="Media Image" />
+                <Image alt="Media Image" onClick={() => router.push(`/view/${mediaType}/${media_info.id}`)} />
             </picture>
             <StyledMediaInfo>
                 <Title onClick={() => router.push(`/view/${mediaType}/${media_info.id}`)}>

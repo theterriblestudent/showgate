@@ -18,7 +18,7 @@ function ContentStripe({data, contentStripeRef, urlBuilder, getContentCards, con
                                   className="chevron right-chevron" />
 
             <ScrollableContainer small={small} ref={mergedRef}>
-                {inView ? getContentCards(contentData ? contentData.results || contentData.cast : []) : null}
+                {inView ? getContentCards(contentData ? contentData.results || contentData : []) : null}
             </ScrollableContainer>
         </StyledContentStripe>
     );

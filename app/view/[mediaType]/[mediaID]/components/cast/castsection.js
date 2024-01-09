@@ -10,7 +10,7 @@ function CastSection({credits}) {
 
     return (
             <ContentStripe small more dataState={castData}
-                           getContentCards={generateCastCards} data={credits}/>
+                           getContentCards={generateCastCards} data={credits ? credits.cast : null}/>
     );
 }
 

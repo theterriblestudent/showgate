@@ -7,7 +7,6 @@ import useFetch from "hooks/useFetch";
 function useMediaOverview(mediaType, mediaID, credits) {
     const [ageRating, setAgeRating] = React.useState("NR");
 
-    const mediaInfo = useFetch(`https://api.themoviedb.org/3/${mediaType}/${mediaID}?api_key=f4b38564562890f30d78269e51e393a2&language=en-US`);
     const ratingsInfo = useFetch(getRatingsUrl());
     const countryCode = useFetch("https://extreme-ip-lookup.com/json/?key=1lJK3nb07ilkdyWbd2ki", true, {countryCode: "US"});
 
@@ -57,7 +56,7 @@ function useMediaOverview(mediaType, mediaID, credits) {
     `;
     
 
-    return {mediaInfo, overlayStyles, ageRating, getDepartmentMembers};
+    return { overlayStyles, ageRating, getDepartmentMembers };
 }
 
 export default useMediaOverview;

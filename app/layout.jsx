@@ -1,7 +1,8 @@
 import StyledComponentsRegistry from "lib/StyleRegistry";
+import {colors} from "styles/colors"
 import GlobalStyles from "styles/globalstyles";
 import {GridContainer, NavBar} from "components";
-import { barlow, roboto } from "styles/fonts"; 
+import { barlow, roboto } from "styles/fonts";
 
 export const metadata = {
     title: "Showgate | Stream Movies and TV Shows.",

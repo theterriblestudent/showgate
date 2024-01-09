@@ -1,12 +1,15 @@
 'use client';
-import { Title, CreditsCard } from "components";
-import {StyledCrewSection} from "./crew.styled"
+import { Title } from "components";
+import {generateCreditsCards} from "utils/cardbuilders"
+import {StyledCrewSection, CreditsGrid} from "./crew.styled"
 
-function CrewSection() {
+function CrewSection({credits}) {
     return (
         <StyledCrewSection>
             <Title dataState={{title: "Crew"}}/>
-            <CreditsCard credit_title="John Doe" department="Production" role="Creature Design"/>
+            <CreditsGrid>
+                {generateCreditsCards(credits ? credits.crew : [])}
+            </CreditsGrid>
         </StyledCrewSection>
     );
 }

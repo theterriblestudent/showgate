@@ -6,13 +6,13 @@ import useMediaInfo from './useMediaInfo';
 
 export default function MediaInfo({params}) {
   
-    const { credits } = useMediaInfo(params); 
+    const { credits, mediaInfo } = useMediaInfo(params); 
 
   return (
     <React.Fragment>
-        <MediaOverview credits={credits} media_type={params.mediaType} media_id={params.mediaID} />
+        <MediaOverview media_info={mediaInfo} credits={credits} media_type={params.mediaType} media_id={params.mediaID} />
         <CastSection credits={credits} />
-        <CrewSection />
+        <CrewSection credits={credits} />
         <RelatedMedia media_type={params.mediaType} media_id={params.mediaID} />
     </React.Fragment>
   )

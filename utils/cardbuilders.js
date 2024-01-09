@@ -1,4 +1,4 @@
-import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard, PosterCard} from "components";
+import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard, PosterCard, CreditsCard} from "components";
 import { getReleaseDate } from "./date";
 
 function generateMediaCards(data) {
@@ -52,4 +52,19 @@ function generatePosterCards(data) {
     );
 }
 
-export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards, generatePosterCards};
+function generateCreditsCards(data, creditType) {
+    if (data.length === 0) return <Loader />
+
+    return (
+        data.map((credit, index) => {
+            return (
+                <CreditsCard credit_title={credit.name || credit.orignal_name}
+                             department={credit.department || credit.known_for_department}
+                             role={credit.job}
+                             index={index}/>
+            )
+        })
+    )
+}
+
+export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards, generatePosterCards, generateCreditsCards};
