@@ -57,7 +57,26 @@ function useTitle(scrollableContainer) {
         });
     }
 
-    return {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick};
+    function handleDropDownClick() {
+        const dropDownList = document.querySelector(".dropdown-list");
+        const opacityValue = dropDownList.style.opacity;
+
+        if (opacityValue == 1) {
+            dropDownList.style.opacity = 0;
+            dropDownList.style.transform = "translateY(-15px)";
+        } else {
+            dropDownList.style.opacity = 1;
+            dropDownList.style.transform = "translateY(0px)";
+        }
+    }
+
+    function handleDropdownOptionClick(setDataState, option) {
+        setDataState(option);
+
+        document.querySelector(".dropdown-title").innerHTML = option.button_text;
+    }
+
+    return {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick, handleDropDownClick, handleDropdownOptionClick};
     
 }
 

@@ -1,4 +1,7 @@
-import { MediaCard, Loader ,PeoplesCard, RankCard, CastCard, PosterCard, CreditsCard} from "components";
+import { FaStar } from "react-icons/fa";
+import { colors } from "styles/colors";
+import { MediaCard, Loader, FlexContainer } from "components";
+import { PeoplesCard, RankCard, CastCard, PosterCard, CreditsCard} from "components"
 import { getReleaseDate } from "./date";
 
 function generateMediaCards(data) {
@@ -67,4 +70,30 @@ function generateCreditsCards(data, creditType) {
     )
 }
 
-export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards, generatePosterCards, generateCreditsCards};
+function generateEpisodeCards(data) {
+
+    function getEpisodeRatings(rating) {
+        return (
+            <FlexContainer gap="10px">
+                <FaStar size={"0.95rem"} color={colors.accent} />
+                <p>{Math.round(rating * 10) / 10}</p>
+            </FlexContainer>
+        )
+    }
+
+    if (data.length === 0) return <Loader />
+
+    return (
+        data.map((credit, index) => {
+            return (
+                <CreditsCard credit_title={`${credit.episode_number}. ${credit.name} `}
+                             department={getReleaseDate(credit.air_date)}
+                             role={getEpisodeRatings(credit.vote_average)}
+                             index={index}
+                             episode/>
+            )
+        })
+    )
+}
+
+export {generateMediaCards, generatePeoplesCards, generateRankCards, generateCastCards, generatePosterCards, generateCreditsCards, generateEpisodeCards};

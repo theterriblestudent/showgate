@@ -1,13 +1,16 @@
 import { Title } from "components";
-import {generateCreditsCards} from "utils/cardbuilders"
+import {generateEpisodeCards} from "utils/cardbuilders"
+import useEpisodesSection from "./useEpisodesSection";
 import {StyledEpisodesSection, CreditsGrid} from "./episodes.styled"
 
-function EpisodesSection({media_info, media_id}) {
+function EpisodesSection({media_info}) {
+
+    const {season, seasonData, setSeason, data} = useEpisodesSection(media_info)
     return (
         <StyledEpisodesSection>
-            <Title dataState={{title: "Episodes"}}/>
+            <Title dataState={season} setDataState={setSeason} controlOptions={seasonData} dd_test/>
             <CreditsGrid>
-                {generateCreditsCards(credits ? credits.crew : [])}
+               {data ? generateEpisodeCards(data.episodes) : []}
             </CreditsGrid>
         </StyledEpisodesSection>
     );

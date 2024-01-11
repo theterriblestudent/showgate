@@ -2,10 +2,10 @@
 
 import styled from "styled-components";
 import {Button, FlexContainer} from "components";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 
-export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px"})`
+export const  StyledTitle = styled(FlexContainer).attrs({gap: "15px", align_content: "flex-start"})`
     justify-content: space-between;
 
     background: transparent;
@@ -85,3 +85,70 @@ export const MobileButton = styled(Button)`
         display: block;
     }
 `;
+
+export const StyledDropDown = styled(FlexContainer).attrs({
+    gap: "10px",
+    className: "dropdown"
+})`
+    position: relative;
+
+    a {
+        font-family: var(--secondary-font);
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 1rem;
+
+        cursor: pointer;
+    }
+
+    
+`
+
+export const StyledChevDown = styled(FaChevronDown)`
+    font-size: 0.95rem;
+    color: var(--accent-color);
+`
+
+export const DropDownList = styled(FlexContainer).attrs({
+    flex_direction: "column",
+    align_content: "flex-start",
+    gap: "10px",
+    className: "dropdown-list"
+})`
+    background-color: var(--light-background-color);
+    border-radius: 10px;
+
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(-15px);
+
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    p:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+
+    p:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+
+    p {
+        font-family: var(--secondary-font);
+        color: var(--accent-color);
+
+        width: 100%;
+
+        padding: 5px 10px;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--accent-color);
+            color: var(--light-foreground-color);
+        }
+    }
+`
