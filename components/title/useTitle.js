@@ -5,6 +5,7 @@ import { colors } from "styles/colors";
 function useTitle(scrollableContainer) {
     const switchRef = React.useRef();
 
+    //Fades the content out before changing, fades it in after changing
     function changeContent(setDataState, dataState) {
         scrollableContainer.current.style.opacity =  0;
 
@@ -57,23 +58,33 @@ function useTitle(scrollableContainer) {
         });
     }
 
+    function closeDropDown(dropDownList) {
+        dropDownList.style.opacity = 0;
+        dropDownList.style.transform = "translateY(-15px)";
+        dropDownList.style.pointerEvents = "none";
+    }
+
     function handleDropDownClick() {
         const dropDownList = document.querySelector(".dropdown-list");
         const opacityValue = dropDownList.style.opacity;
 
         if (opacityValue == 1) {
-            dropDownList.style.opacity = 0;
-            dropDownList.style.transform = "translateY(-15px)";
+            closeDropDown(dropDownList);
+            
         } else {
             dropDownList.style.opacity = 1;
             dropDownList.style.transform = "translateY(0px)";
+            dropDownList.style.pointerEvents = "auto";
         }
     }
 
     function handleDropdownOptionClick(setDataState, option) {
-        setDataState(option);
+        const dropDownList = document.querySelector(".dropdown-list");
+
+        changeContent(setDataState, option);
 
         document.querySelector(".dropdown-title").innerHTML = option.button_text;
+        closeDropDown(dropDownList);
     }
 
     return {switchRef, handleTitleButtonClick, getMobileButtonText, handleMobileButtonClick, handleDropDownClick, handleDropdownOptionClick};

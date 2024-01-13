@@ -7,11 +7,16 @@ import {GridContainer, FlexContainer} from "components"
 
 const StyledNavbar = styled(GridContainer).attrs({className:"full-width nav-bar"})` 
     padding: 20px 0 20px 0;
+
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+
+    min-height: 80.25px;
+
     z-index: 10;
+
     transition: background-color 0.5s;
 
     @media only screen and (max-width: 968px) {
@@ -38,13 +43,25 @@ const StyledLink = styled(Link)`
     }
 `;
 
+const StyledImageContainer = styled.div.attrs({className: "branding-container"})`
+    height: fit-content;
+
+    position: relative;
+
+    transition: transform 0.4s ease-in-out;
+
+    @media only screen and (max-width: 968px) {
+        flex: 1;
+    }
+`
+
 const StyledImage = styled(Image)`
     width: clamp(150px, 10.42vw, 200px);
     height: auto;
     margin-right: 35px;
     cursor: pointer;
 
-    @media only screen and (max-width: 967px) {
+    @media only screen and (max-width: 968px) {
         width: 150px;
     }
 `;
@@ -54,6 +71,9 @@ const BurgerButton = styled(FaBars)`
     font-size: 1.6rem;
     display: none;
     z-index: 3;
+
+    flex-shrink: 0;
+
     @media only screen and (max-width: 968px) {
         display: block;
     }
@@ -74,4 +94,4 @@ const MobielNav = styled(FlexContainer).attrs({className: "mobile-nav"})`
     }
 `;
 
-export {StyledNavbar, StyledLink, StyledImage, BurgerButton, MobielNav};
+export {StyledNavbar, StyledLink, StyledImage, BurgerButton, MobielNav, StyledImageContainer};

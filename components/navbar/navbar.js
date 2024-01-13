@@ -3,7 +3,7 @@
 import React from "react";
 import {branding} from 'assets'
 import useNavbar from "./useNavbar";
-import {StyledNavbar, StyledImage, BurgerButton, MobielNav} from "./navbar.styled";
+import {StyledNavbar, StyledImage, BurgerButton, MobielNav, StyledImageContainer} from "./navbar.styled";
 import {FlexContainer, SearchForm } from "components"
 
 const NavBar = function({}) {
@@ -11,9 +11,10 @@ const NavBar = function({}) {
     
     return (
         <StyledNavbar>
-
-            <FlexContainer gap="20px" justify_content="space-between" style={{position: "relative"}}>
-                <StyledImage src={branding} alt="Website Logo" />
+            <FlexContainer className="navbar-content" gap="20px" justify_content="space-between" style={{position: "relative"}}>
+                <StyledImageContainer>
+                    <StyledImage src={branding} alt="Website Logo" />
+                </StyledImageContainer>
                 <FlexContainer gap="32px" className="nav-links" flex={1}>
                     {getNavLinks()}
                 </FlexContainer>

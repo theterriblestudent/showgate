@@ -12,8 +12,8 @@ export const metadata = {
 export default function RootLayout({children}) {
 
     return(
-        <html lang="en" className={`${barlow.variable} ${roboto.variable}`}>
-            <body>
+        <html lang="en" className={`${roboto.variable}`}>
+            <body className={`${barlow.variable}`}>
                 <StyledComponentsRegistry>
                     <GlobalStyles />
                     <GridContainer>

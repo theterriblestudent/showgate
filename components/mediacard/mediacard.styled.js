@@ -19,12 +19,16 @@ export const StyledMediaCard = styled.div`
     @media only screen and (max-width: 968px) {
         background: transparent;
         width: 9.5rem;
+
+        margin-bottom: 35px;
     }
     img {
         width: 100%;
         height: 200px;
 
         border-radius: 5px 5px 0 0;
+
+        cursor: pointer;
 
         @media only screen and (max-width: 968px) {
             border-radius: 8px;

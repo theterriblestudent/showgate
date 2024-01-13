@@ -5,12 +5,14 @@ import {StyledEpisodesSection, CreditsGrid} from "./episodes.styled"
 
 function EpisodesSection({media_info}) {
 
-    const {season, seasonData, setSeason, data} = useEpisodesSection(media_info)
+    const {season, seasonData, setSeason, data, getEpisodeRatings, containerRef} = useEpisodesSection(media_info)
     return (
         <StyledEpisodesSection>
-            <Title dataState={season} setDataState={setSeason} controlOptions={seasonData} dd_test/>
-            <CreditsGrid>
-               {data ? generateEpisodeCards(data.episodes) : []}
+            <Title dataState={season} setDataState={setSeason}
+                   controlOptions={seasonData} scrollableContainer={containerRef}/>
+                   
+            <CreditsGrid ref={containerRef}>
+               {data ? generateEpisodeCards(data.episodes, getEpisodeRatings) : []}
             </CreditsGrid>
         </StyledEpisodesSection>
     );

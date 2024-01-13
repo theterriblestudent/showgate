@@ -7,7 +7,7 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
     margin-bottom: 70px;
 
     @media only screen and (max-width: 968px) {
-        margin-bottom: 45px;
+        margin-bottom: 0px;
     }
 
     position: relative;
@@ -53,7 +53,7 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
 
     margin-top: 20px;
 
-    padding-left: ${props => props.small ? "none" : "4.5%"};
+    padding-left: ${props => props.small ? "0" : "4.5%"};
 
     grid-column: ${props => props.small ? "content" : "full-width"} !important;
 
@@ -65,7 +65,9 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
 
     @media only screen and (max-width: 968px) {
         margin-top: 20px;
-        padding-left: 5%;
+        padding-left: ${props => props.small ? "0" : "5%"};
+
+        gap: 15px;
     }
 
     &::-webkit-scrollbar {

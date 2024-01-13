@@ -6,7 +6,7 @@ function CreditsCard({credit_title, department, role, index, episode}) {
             <h2>{credit_title}</h2>
             <Department>
                 <p>{department}</p>
-                <div />
+                <div className="separator"/>
                 {!episode && <p>{role}</p>}
                 {episode && role}
             </Department>

@@ -47,7 +47,7 @@ export const Department = styled(FlexContainer).attrs({gap: "10px"})`
         }
     }
 
-    div {
+    .separator {
         width: 6px;
         height: 6px;
         background-color: var(--accent-color);

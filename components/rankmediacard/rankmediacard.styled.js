@@ -10,10 +10,10 @@ export const StyledBoxOfficeCard = styled.div`
 
     flex-shrink: 0;
 
+    margin-bottom: 35px;
+
     width: clamp(180px, 13.5vw, 250px);
     height: clamp(290px, 18.75vw, 360px);
-
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
 
     &:first-child {margin-left: 40px;}
 
@@ -29,6 +29,8 @@ export const StyledBoxOfficeCard = styled.div`
         left: 0;
 
         border-radius: 3px;
+
+        box-shadow: 0px 18px 20px rgba(0, 0, 0, 0.45);
         
         @media only screen and (max-width: 968px) {
             border-radius: 5px;

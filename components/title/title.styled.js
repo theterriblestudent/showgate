@@ -97,6 +97,7 @@ export const StyledDropDown = styled(FlexContainer).attrs({
         color: var(--accent-color);
         text-decoration: none;
         font-size: 1rem;
+        font-weight: bold;
 
         cursor: pointer;
     }
@@ -121,12 +122,19 @@ export const DropDownList = styled(FlexContainer).attrs({
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
+
     width: 100%;
+    max-height: 200px;
+    overflow-y: scroll;
 
     opacity: 0;
     transform: translateY(-15px);
 
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     p:first-child {
         border-radius: 10px 10px 0 0;
