@@ -1,10 +1,9 @@
-'use client';
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import useMediaCard from "./useMediaCard";
 import { getReleaseDate } from "utils/date";
 import { FlexContainer } from "components";
-import { no_poster_image, no_backdrop_image } from "assets";
 import {ReleaseDate, Genres, Title} from "./mediacard.styled";
 import { Star, AddButton, RatingNumber } from "./mediacard.styled";
 import {StyledMediaCard, StyledMediaInfo, MediaInfoGrid} from "./mediacard.styled";
@@ -18,10 +17,10 @@ function MediaCard({media_info}) {
             <picture>
                 <source media="(min-width: 968px)"
                         srcSet={media_info.backdrop_path ?
-                            `https://image.tmdb.org/t/p/w780${media_info.backdrop_path}` : no_backdrop_image}/>
+                            `https://image.tmdb.org/t/p/w780${media_info.backdrop_path}` : "/assets/images/bd-not-found.png"}/>
                 <source media="(max-width: 968px)"
                         srcSet={media_info.poster_path ? 
-                            `https://image.tmdb.org/t/p/w342${media_info.poster_path}` : no_poster_image}/>
+                            `https://image.tmdb.org/t/p/w342${media_info.poster_path}` : "/assets/images/poster-not-found.png"}/>
                 <Image alt="Media Image" src="" onClick={() => router.push(`/view/${mediaType}/${media_info.id}`)} />
             </picture>
             <StyledMediaInfo>

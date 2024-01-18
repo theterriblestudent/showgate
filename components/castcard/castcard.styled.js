@@ -11,6 +11,8 @@ export const StyledCastCard = styled.div`
 
     flex-shrink: 0;
 
+    margin-right: -5px;
+
     @media only screen and (max-width: 968px) {
         width: 125px;
     }

@@ -1,5 +1,5 @@
 import {v4 as uuid} from "uuid";
-import { MediaCard, Loader, FlexContainer } from "components";
+import { MediaCard, Loader } from "components";
 import { PeoplesCard, RankCard, CastCard, PosterCard, CreditsCard} from "components"
 import { getReleaseDate } from "./date";
 
@@ -36,7 +36,7 @@ function generateCastCards(data) {
     return data.map(cast => {
         return <CastCard key={uuid()} profile_image={cast.profile_path}
                          name={cast.name || cast.original_name}
-                         character={cast.character} />
+                         character={cast.character || "N/A"} />
     });
 }
 
@@ -45,7 +45,8 @@ function generatePosterCards(data) {
     return (
         data.map(media => {
             return (
-                <PosterCard key={uuid()} image={ `http://image.tmdb.org/t/p/w342${media.poster_path}` }
+                <PosterCard key={uuid()}
+                image={ media.poster_path ? `http://image.tmdb.org/t/p/w342${media.poster_path}` : "/assets/images/poster-not-found.png" }
                 releaseDate={getReleaseDate(media.release_date || media.first_air_date)}
                 media_id={media.id}
                 media_type={media.release_date ? "movie" : "tv"} />

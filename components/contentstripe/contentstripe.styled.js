@@ -14,10 +14,9 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
 
     .chevron {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 105%;
 
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         color: var(--accent-color);
 
@@ -29,12 +28,13 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
     }
 
     .left-chevron {
-        left: 0;
-        transform: translateX(-50%);
+        right: 50%;
+        transform: translateX(-20%);
     }
 
     .right-chevron {
-        right: 0;
+        left: 50%;
+        transform: translateX(20%);
     }
 `;
 
@@ -55,7 +55,13 @@ export const ScrollableContainer = styled(FlexContainer).attrs({
 
     padding-left: ${props => props.small ? "0" : "4.5%"};
 
-    grid-column: ${props => props.small ? "content" : "full-width"} !important;
+    grid-column: ${props => {
+        if (props.small) {
+            if (props.breakout) 
+                return "breakout";
+            return "content"
+        } else return "full-width";
+    }} !important;
 
     border-radius: 7px 7px 0 0;
 

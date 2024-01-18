@@ -18,7 +18,7 @@ export const StyledMediaCard = styled.div`
 
     @media only screen and (max-width: 968px) {
         background: transparent;
-        width: 9.5rem;
+        width: 8rem;
 
         margin-bottom: 35px;
     }

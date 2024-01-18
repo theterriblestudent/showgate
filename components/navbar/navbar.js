@@ -6,7 +6,7 @@ import useNavbar from "./useNavbar";
 import {StyledNavbar, StyledImage, BurgerButton, MobielNav, StyledImageContainer} from "./navbar.styled";
 import {FlexContainer, SearchForm } from "components"
 
-const NavBar = function({}) {
+const NavBar = function() {
     const {getNavLinks, handleBurgerButtonClick} = useNavbar();
     
     return (
@@ -21,11 +21,9 @@ const NavBar = function({}) {
                 <SearchForm />
                 <BurgerButton onClick={handleBurgerButtonClick} />
             </FlexContainer>
-
             <MobielNav justify_content="center" gap="25px" flex_direction="column">
                 {getNavLinks()}
             </MobielNav>
-
         </StyledNavbar>
     )
 };

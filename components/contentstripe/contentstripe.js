@@ -4,7 +4,7 @@ import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 import {StyledContentStripe, ScrollableContainer} from './contentstripe.styled';
 
 
-function ContentStripe({data, contentStripeRef, urlBuilder, getContentCards, controlOptions, more, setDataState, dataState, small}) {
+function ContentStripe({data, contentStripeRef, urlBuilder, getContentCards, controlOptions, more, setDataState, dataState, small, breakout}) {
     const {contentData, inView, handleChevronClick, mergedRef, scrollableContainer} = useContentStripe(urlBuilder, data);
     return (
         <StyledContentStripe small={small} ref={contentStripeRef}>
@@ -17,7 +17,7 @@ function ContentStripe({data, contentStripeRef, urlBuilder, getContentCards, con
             <FaChevronCircleRight onClick={handleChevronClick}
                                   className="chevron right-chevron" />
 
-            <ScrollableContainer small={small} ref={mergedRef}>
+            <ScrollableContainer breakout={breakout} small={small} ref={mergedRef}>
                 {inView ? getContentCards(contentData ? contentData.results || contentData : []) : null}
             </ScrollableContainer>
         </StyledContentStripe>

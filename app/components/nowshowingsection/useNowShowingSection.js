@@ -5,11 +5,7 @@ import React from "react";
 function useNowShowingSection() {
 
     const contentStripeRef = React.useRef();
-
-    // React.useLayoutEffect(() => {
-    //     contentStripeRef.current.style.background = "red";
-    // }, [])
-
+    
     const nowShowingData = [
          {
             title: "In Theaters",

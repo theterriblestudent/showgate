@@ -1,5 +1,5 @@
+import React from "react";
 import StyledComponentsRegistry from "lib/StyleRegistry";
-import {colors} from "styles/colors"
 import GlobalStyles from "styles/globalstyles";
 import {GridContainer, NavBar} from "components";
 import { barlow, roboto } from "styles/fonts";

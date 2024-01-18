@@ -38,12 +38,16 @@ const GlobalStyles = createGlobalStyle`
     }
 
     //Content Placement in the grind container
-    .container-grid > :not(.full-width) {
+    .container-grid > :not(.full-width, .breakout) {
         grid-column: content;
     }
 
     .container-grid > .full-width {
         grid-column: full-width;
+    }
+
+    .container-grid > .breakout {
+        grid-column: breakout;
     }
 
     //Exceptions

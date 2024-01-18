@@ -1,13 +1,8 @@
 'use client';
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import useFetch from "hooks/useFetch";
 
 function useMediaCard(media_info) {
-    const {ref, inView, entry} = useInView({
-        triggerOnce: true
-    })
-
     function getMediaType() {
         return media_info.release_date ? "movie" : "tv";
     }

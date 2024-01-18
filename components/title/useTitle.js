@@ -37,7 +37,6 @@ function useTitle(scrollableContainer) {
                 button.style.color = colors.dark_foreground;
             }
         });
-
     }
 
     function getMobileButtonText(controlOptions, dataState) {

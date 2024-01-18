@@ -9,7 +9,7 @@ function RelatedMedia({ media_type, media_id }) {
     const {urlBuilder, relatedData} = useRelatedMedia(media_type, media_id);
 
     return (
-        <ContentStripe small urlBuilder={urlBuilder} more dataState={relatedData}
+        <ContentStripe breakout small urlBuilder={urlBuilder} more dataState={relatedData}
                        getContentCards={generatePosterCards}/>
     );
 }

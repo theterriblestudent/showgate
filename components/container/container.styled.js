@@ -4,10 +4,12 @@ import styled from "styled-components";
 const GridContainer = styled.div.attrs({className:"container-grid"})`
     --padding-inline: 5%;
     --max-content: ${props => props.small ? "1200px" : "1800px"};
+    --breakout-max-width: 1400px;
+    --breakout-size: calc((var(--breakout-max-width) - var(--max-content)) / 2);
 
     width: 100%;
     display: grid;
-    grid-template-columns: [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] min(100% - (var(--padding-inline) * 2), var(--max-content)) [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+    grid-template-columns: [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--max-content)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
 `; 
 
 const FlexContainer = styled.div`
