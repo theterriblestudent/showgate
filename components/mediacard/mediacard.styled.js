@@ -39,7 +39,7 @@ export const StyledMediaCard = styled.div`
 `;
 
 export const StyledMediaInfo = styled.div `
-    padding: 5px 12px 5px 12px;
+    padding: 10px 15px 0px 15px;
     max-width: 360px;
 
     @media only screen and (max-width: 968px) {
@@ -51,16 +51,16 @@ export const StyledMediaInfo = styled.div `
 `;
 
 export const Title = styled.div`
-    width: inherit;
+    width: 92%;
 
     font-size: 1.25rem;
     font-size: clamp(1.25rem, 1rem + 0.800vw, 1.55rem);
-    font-family: var(--secondary-font);
+    font-family: var(--primary-font);
     font-weight: 600;
     text-overflow: ellipsis;
     color: var(--light-foreground-color);
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     white-space: nowrap;
     overflow: hidden;

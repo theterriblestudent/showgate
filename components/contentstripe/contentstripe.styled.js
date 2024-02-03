@@ -20,7 +20,7 @@ export const StyledContentStripe = styled(GridContainer).attrs({className: "full
 
         color: var(--accent-color);
 
-        z-index: 500;
+        z-index: 9;
 
         @media only screen and (max-width: 968px) {
             display: none;
